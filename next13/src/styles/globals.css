@@ -10,7 +10,35 @@
   box-sizing: border-box;
 }
 
+html,
+body,
+#__next,
+.root_layout {
+  @apply w-full h-full;
+}
+
 /* home */
 .home_container {
-  @apply w-full h-full;
+  @apply flex_center flex-col w-full h-full;
+
+  h1 {
+    @apply text-[32px];
+  }
+
+  .link_area {
+    @apply mt-[20px];
+
+    a {
+      @apply block p-3 rounded-md text-white bg-lime-600;
+    }
+  }
+}
+
+/* fullpageScroll */
+.outer {
+  @apply relative w-full h-screen overflow-hidden;
+
+  .inner {
+    @apply relative flex_center w-full h-screen py-[5.64vmin];
+  }
 }
