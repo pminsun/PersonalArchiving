@@ -6,6 +6,24 @@ export default function FullpageScroll() {
   const [isScrolling, setIsScrolling] = useState(false);
   const [scrollTimeout, setScrollTimeout] = useState(null);
 
+  // currentPage변경시 페이지 이동
+  useEffect(() => {
+    const scrollToPage = (page) => {
+      const outerDiv = outerDivRef.current;
+      if (!outerDiv) return;
+
+      const pageHeight = outerDiv.clientHeight;
+
+      outerDiv.scrollTo({
+        top: (page - 1) * pageHeight,
+        left: 0,
+        behavior: 'smooth',
+      });
+    };
+
+    scrollToPage(currentPage);
+  }, [currentPage]);
+
   useEffect(() => {
     const wheelHandler = (e) => {
       e.preventDefault();
@@ -76,14 +94,22 @@ export default function FullpageScroll() {
   }, [currentPage, isScrolling, scrollTimeout]);
 
   return (
-    <section
-      ref={outerDivRef}
-      className="outer"
-    >
-      <div className="bg-red-100 inner">풀 스크린 스크롤</div>
-      <div className="bg-red-200 inner"></div>
-      <div className="bg-red-300 inner"></div>
-      <div className="bg-red-400 inner"></div>
-    </section>
+    <>
+      <section
+        ref={outerDivRef}
+        className="outer"
+      >
+        <div className="bg-red-100 inner">풀 스크린 스크롤</div>
+        <div className="bg-red-200 inner"></div>
+        <div className="bg-red-300 inner"></div>
+        <div className="bg-red-400 inner"></div>
+      </section>
+      <div
+        onClick={() => setCurrentPage(1)}
+        className="gotoTop"
+      >
+        Top
+      </div>
+    </>
   );
 }

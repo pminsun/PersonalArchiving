@@ -42,3 +42,6 @@ body,
     @apply relative flex_center w-full h-screen py-[5.64vmin];
   }
 }
+.gotoTop {
+  @apply absolute w-20 h-20 text-white bg-blue-500 rounded-full cursor-pointer flex_center bottom-10 right-10;
+}
