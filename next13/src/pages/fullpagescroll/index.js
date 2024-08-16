@@ -5,6 +5,7 @@ export default function FullpageScroll() {
   const [currentPage, setCurrentPage] = useState(1);
   const [isScrolling, setIsScrolling] = useState(false);
   const [scrollTimeout, setScrollTimeout] = useState(null);
+  const totalPage = 4;
 
   // currentPage변경시 페이지 이동
   useEffect(() => {
@@ -37,7 +38,6 @@ export default function FullpageScroll() {
       const { clientHeight, scrollHeight } = outerDiv;
       const pageHeight = clientHeight;
       let nextPage = currentPage;
-      const totalPage = 4;
 
       if (deltaY > 0) {
         // 스크롤 내릴 때
@@ -110,6 +110,17 @@ export default function FullpageScroll() {
       >
         Top
       </div>
+      <ul className="dot_area">
+        {Array.from(Array(totalPage), (_, index) => index + 1).map((dot, index) => (
+          <li
+            key={index}
+            className="dot"
+            onClick={() => setCurrentPage(index + 1)}
+          >
+            {index + 1}
+          </li>
+        ))}
+      </ul>
     </>
   );
 }
