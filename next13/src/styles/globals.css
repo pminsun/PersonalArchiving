@@ -12,18 +12,25 @@
 
 html,
 body,
-#__next,
+#__next {
+  @apply w-full h-full;
+}
+
 .root_layout {
   @apply w-full h-full;
+}
+
+/* header */
+header {
+  @apply fixed top-0 left-0 right-0 z-10 flex_center w-full h-[50px] bg-blue-200;
+  a {
+    @apply text-[22px] font-bold;
+  }
 }
 
 /* home */
 .home_container {
   @apply flex_center flex-col w-full h-full;
-
-  h1 {
-    @apply text-[32px];
-  }
 
   .link_area {
     @apply mt-[20px];
@@ -35,6 +42,16 @@ body,
 }
 
 /* fullpageScroll */
+.fullPageList_area {
+  @apply flex_center w-full h-full pt-[50px];
+
+  .link_area {
+    a {
+      @apply block p-3 rounded-md text-white bg-lime-600;
+    }
+  }
+}
+
 .outer {
   @apply relative w-full h-screen overflow-hidden;
 

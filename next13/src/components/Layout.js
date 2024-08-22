@@ -1,3 +1,10 @@
+import Header from './Header';
+
 export default function Layout({ children }) {
-  return <section className="root_layout">{children}</section>;
+  return (
+    <>
+      <Header />
+      <section className="root_layout">{children}</section>
+    </>
+  );
 }
