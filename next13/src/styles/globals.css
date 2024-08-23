@@ -60,13 +60,33 @@ header {
   }
 }
 .gotoTop {
-  @apply absolute w-20 h-20 text-white bg-blue-500 rounded-full cursor-pointer flex_center bottom-10 right-10;
+  @apply absolute w-20 h-20 z-30 text-white bg-blue-500 rounded-full cursor-pointer flex_center bottom-10 right-10;
 }
 
 .dot_area {
-  @apply flex_vertical_center flex-col gap-2 absolute_yHalf left-10;
+  @apply flex_vertical_center flex-col gap-2 absolute_yHalf left-10 z-30;
 
   .dot {
     @apply flex_center text-white w-8 h-8 cursor-pointer rounded-full bg-slate-500;
+  }
+}
+
+.fadeOuter {
+  @apply relative w-full h-screen overflow-hidden;
+
+  .inner {
+    @apply absolute top-0 left-0 flex_center w-full h-screen py-[5.64vmin];
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+  }
+
+  .inner.active {
+    opacity: 1;
+    z-index: 1; /* 현재 페이지는 가장 위에 오도록 설정 */
+  }
+
+  .inner.exiting {
+    opacity: 0;
+    z-index: 0; /* 페이드 아웃될 때 뒤로 사라지도록 설정 */
   }
 }
