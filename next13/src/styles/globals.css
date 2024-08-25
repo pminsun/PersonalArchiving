@@ -22,7 +22,7 @@ body,
 
 /* header */
 header {
-  @apply fixed top-0 left-0 right-0 z-10 flex_center w-full h-[50px] bg-blue-200;
+  @apply fixed top-0 left-0 right-0 z-[100] flex_center w-full h-[50px] bg-blue-200;
   a {
     @apply text-[22px] font-bold;
   }
@@ -59,6 +59,10 @@ header {
     @apply relative flex_center w-full h-screen py-[5.64vmin];
   }
 }
+
+.showCode {
+  @apply absolute w-28 h-20 z-30 text-white bg-blue-500 cursor-pointer flex_center top-20 left-10;
+}
 .gotoTop {
   @apply absolute w-20 h-20 z-30 text-white bg-blue-500 rounded-full cursor-pointer flex_center bottom-10 right-10;
 }
@@ -88,5 +92,27 @@ header {
   .inner.exiting {
     opacity: 0;
     z-index: 0; /* 페이드 아웃될 때 뒤로 사라지도록 설정 */
+  }
+}
+
+/* ViewCode */
+.viewCode_container {
+  @apply fixed top-[0] z-50 h-screen overflow-y-auto pl-8 pt-[82px] pr-8 pb-12 bg-white;
+
+  /* scrollbar */
+  &::-webkit-scrollbar {
+    width: 0.88vmin;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #509bf8;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #ededed;
+  }
+
+  .title {
+    @apply pb-4 text-2xl font-bold border-b border-gray-800;
   }
 }
