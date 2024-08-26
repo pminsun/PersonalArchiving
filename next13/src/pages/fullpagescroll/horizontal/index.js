@@ -104,20 +104,26 @@ export default function FullpageScrollHorizontal() {
           className="bg-red-100 inner"
           style={{ minWidth: '100vw' }}
         >
-          풀 스크린 수평 스크롤
+          풀 스크린 수평 스크롤 - 1
         </div>
         <div
           className="bg-red-200 inner"
           style={{ minWidth: '100vw' }}
-        ></div>
+        >
+          풀 스크린 수평 스크롤 - 2
+        </div>
         <div
           className="bg-red-300 inner"
           style={{ minWidth: '100vw' }}
-        ></div>
+        >
+          풀 스크린 수평 스크롤 - 3
+        </div>
         <div
           className="bg-red-400 inner"
           style={{ minWidth: '100vw' }}
-        ></div>
+        >
+          풀 스크린 수평 스크롤 - 4
+        </div>
       </section>
       <div
         onClick={() => setCurrentPage(1)}

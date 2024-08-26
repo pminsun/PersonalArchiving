@@ -72,10 +72,10 @@ export default function FullpageScrollFadeInOut() {
         ref={outerDivRef}
         className="fadeOuter"
       >
-        <div className="bg-red-100 inner active">첫번째 fade 페이지</div>
-        <div className="bg-red-200 inner">두번째 페이지</div>
-        <div className="bg-red-300 inner">세번째 페이지</div>
-        <div className="bg-red-400 inner">네번째 페이지</div>
+        <div className="bg-red-100 inner active">풀 스크린 fade 스크롤 - 1</div>
+        <div className="bg-red-200 inner">풀 스크린 fade 스크롤 - 2</div>
+        <div className="bg-red-300 inner">풀 스크린 fade 스크롤 - 3</div>
+        <div className="bg-red-400 inner">풀 스크린 fade 스크롤 - 4</div>
       </section>
       <div
         onClick={() => setCurrentPage(1)}

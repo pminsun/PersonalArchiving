@@ -119,3 +119,36 @@ export default function FullpageScrollVerticality() {
   );
 }
 `;
+
+export const fullPageScrollCssCode = `
+.fullPageList_area {
+  @apply flex_center w-full h-full pt-[50px];
+
+  .link_area {
+    a {
+      @apply block p-3 rounded-md text-white bg-lime-600;
+    }
+  }
+}
+
+.outer {
+  @apply relative w-full h-screen overflow-hidden;
+
+  .inner {
+    @apply relative flex_center w-full h-screen py-[5.64vmin];
+  }
+}
+
+.gotoTop {
+  @apply absolute w-20 h-20 z-30 text-white bg-blue-500 rounded-full cursor-pointer flex_center bottom-10 right-10;
+}
+
+.dot_area {
+  @apply flex_vertical_center flex-col gap-2 absolute_yHalf left-10 z-30;
+
+  .dot {
+    @apply flex_center text-white w-8 h-8 cursor-pointer rounded-full bg-slate-500;
+  }
+}
+
+`;

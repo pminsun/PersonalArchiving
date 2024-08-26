@@ -1,5 +1,5 @@
-import ViewCode from '@/components/ViewCode';
-import { fullPageScrollCode } from '@/utils/codeString';
+import CodeModal from '@/components/CodeModal';
+import { fullPageScrollCode, fullPageScrollCssCode } from '@/utils/codeString';
 import { useEffect, useRef, useState } from 'react';
 
 export default function FullpageScrollVerticality() {
@@ -8,7 +8,7 @@ export default function FullpageScrollVerticality() {
   const [isScrolling, setIsScrolling] = useState(false);
   const [scrollTimeout, setScrollTimeout] = useState(null);
   const totalPage = 4;
-  const [codeShow, setCodeShow] = useState(false);
+  const [codeShow, setCodeShow] = useState({ reat: false, css: false });
 
   // currentPage변경시 페이지 이동
   useEffect(() => {
@@ -98,27 +98,20 @@ export default function FullpageScrollVerticality() {
 
   return (
     <>
-      <div
-        className="showCode"
-        onClick={() => setCodeShow(true)}
-      >
-        React code
-      </div>
-      {codeShow && (
-        <ViewCode
-          react={fullPageScrollCode}
-          setCodeShow={setCodeShow}
-        />
-      )}
+      <CodeModal
+        codeReactTxt={fullPageScrollCode}
+        codeCssTxt={fullPageScrollCssCode}
+        show={codeShow}
+        setShow={setCodeShow}
+      />
       <section
         ref={outerDivRef}
         className="outer"
-        onClick={() => setCodeShow(false)}
       >
-        <div className="bg-red-100 inner">풀 스크린 수직 스크롤</div>
-        <div className="bg-red-200 inner"></div>
-        <div className="bg-red-300 inner"></div>
-        <div className="bg-red-400 inner"></div>
+        <div className="bg-red-100 inner">풀 스크린 수직 스크롤 - 1</div>
+        <div className="bg-red-200 inner">풀 스크린 수직 스크롤 - 2</div>
+        <div className="bg-red-300 inner">풀 스크린 수직 스크롤 - 3</div>
+        <div className="bg-red-400 inner">풀 스크린 수직 스크롤 - 4</div>
       </section>
       <div
         onClick={() => setCurrentPage(1)}
