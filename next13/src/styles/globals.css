@@ -22,7 +22,7 @@ body,
 
 /* header */
 header {
-  @apply fixed top-0 left-0 right-0 z-[100] flex_center w-full h-[50px] border-b-2 border-black;
+  @apply fixed top-0 left-0 right-0 z-[100] flex_center w-full h-[50px] bg-white border-b-2 border-black;
   a {
     @apply text-[22px] font-bold;
   }
