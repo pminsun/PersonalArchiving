@@ -60,8 +60,13 @@ header {
   }
 }
 
+/* 플러팅 요소들 */
 .showCode {
-  @apply absolute w-28 h-20 z-30 text-white bg-blue-500 cursor-pointer flex_center top-20 left-10;
+  @apply absolute w-24 h-14 z-30 text-white bg-blue-500 cursor-pointer flex_center top-20 left-[-48px] transition-all duration-75;
+
+  &:hover {
+    @apply left-0;
+  }
 }
 .gotoTop {
   @apply absolute w-20 h-20 z-30 text-white bg-blue-500 rounded-full cursor-pointer flex_center bottom-10 right-10;
@@ -97,7 +102,7 @@ header {
 
 /* ViewCode */
 .viewCode_container {
-  @apply fixed top-[0] z-50 h-screen overflow-y-auto pl-8 pt-[82px] pr-8 pb-12 bg-white;
+  @apply fixed top-[0] z-50 h-screen overflow-y-auto pl-8 pt-[82px] pr-8 pb-12 bg-[#F6F4EF];
 
   /* scrollbar */
   &::-webkit-scrollbar {
@@ -112,7 +117,26 @@ header {
     background: #ededed;
   }
 
-  .title {
-    @apply pb-4 text-2xl font-bold border-b border-gray-800;
+  .title_area {
+    @apply flex_xBetween pb-4 border-b border-gray-800;
+    .title {
+      @apply text-2xl font-bold;
+    }
+
+    > div {
+      @apply flex_center w-6 h-6 cursor-pointer;
+    }
+  }
+
+  .copy_area {
+    @apply flex items-center justify-end mt-[10px];
+
+    .copyClipboard {
+      @apply flex items-center justify-end gap-2 cursor-pointer w-[100px];
+
+      p {
+        @apply text-sm;
+      }
+    }
   }
 }

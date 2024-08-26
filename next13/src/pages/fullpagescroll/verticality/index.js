@@ -104,7 +104,12 @@ export default function FullpageScrollVerticality() {
       >
         React code
       </div>
-      {codeShow && <ViewCode react={fullPageScrollCode} />}
+      {codeShow && (
+        <ViewCode
+          react={fullPageScrollCode}
+          setCodeShow={setCodeShow}
+        />
+      )}
       <section
         ref={outerDivRef}
         className="outer"
