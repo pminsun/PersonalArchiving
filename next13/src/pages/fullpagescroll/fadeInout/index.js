@@ -1,3 +1,5 @@
+import CodeModal from '@/components/CodeModal';
+import { fullPageScrollFadeInOutCode, fullPageScrollFadeInOutCssCode } from '@/utils/codeString';
 import { useEffect, useRef, useState } from 'react';
 
 export default function FullpageScrollFadeInOut() {
@@ -5,6 +7,7 @@ export default function FullpageScrollFadeInOut() {
   const [currentPage, setCurrentPage] = useState(1);
   const [isScrolling, setIsScrolling] = useState(false);
   const totalPage = 4;
+  const [codeShow, setCodeShow] = useState({ reat: false, css: false });
 
   useEffect(() => {
     const outerDiv = outerDivRef.current;
@@ -68,6 +71,12 @@ export default function FullpageScrollFadeInOut() {
 
   return (
     <>
+      <CodeModal
+        codeReactTxt={fullPageScrollFadeInOutCode}
+        codeCssTxt={fullPageScrollFadeInOutCssCode}
+        show={codeShow}
+        setShow={setCodeShow}
+      />
       <section
         ref={outerDivRef}
         className="fadeOuter"
