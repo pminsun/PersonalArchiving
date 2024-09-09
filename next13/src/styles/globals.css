@@ -23,6 +23,10 @@ body,
 /* header */
 header {
   @apply fixed top-0 left-0 right-0 z-[100] flex_center w-full h-[50px] bg-white border-b-2 border-black;
+
+  button.back {
+    @apply block pr-2 absolute_yHalf left-6 text-[22px] text-gray-500;
+  }
   a {
     @apply text-[22px] font-bold;
   }
@@ -42,7 +46,6 @@ header {
 }
 
 /* 코드 모달 */
-/* translate-x-[-56px]  */
 .tag_area {
   @apply flex flex-col gap-3 absolute w-24 top-20 z-30 left-[0];
   .showCode {
@@ -50,7 +53,6 @@ header {
 
     &:hover {
       @apply translate-x-0;
-      /* @apply left-0; */
     }
 
     &.react_tag {
@@ -68,24 +70,16 @@ header {
 }
 
 /* ViewCode */
+/*  h-screen overflow-y-auto */
 .viewCode_container {
-  @apply fixed top-[0] z-50 h-screen overflow-y-auto pl-8 pt-[82px] pr-8 pb-12 bg-[#F6F4EF];
+  @apply fixed top-[0] z-50 h-screen pt-[82px] bg-[#F6F4EF];
 
-  /* scrollbar */
-  &::-webkit-scrollbar {
-    width: 0.88vmin;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: #000;
-  }
-
-  &::-webkit-scrollbar-track {
-    background: #ededed;
+  > div {
+    @apply h-full;
   }
 
   .title_area {
-    @apply flex_xBetween pb-4 border-b border-gray-800;
+    @apply flex_xBetween mx-8 pb-4 border-b border-gray-800;
     .title {
       @apply text-2xl font-bold;
     }
@@ -95,14 +89,34 @@ header {
     }
   }
 
-  .copy_area {
-    @apply flex items-center justify-end mt-[10px];
+  .codeTxt_area {
+    @apply h-[calc(100%-50px)];
+    .copy_area {
+      @apply flex items-center justify-end px-8 mt-[10px];
 
-    .copyClipboard {
-      @apply flex items-center justify-end gap-2 cursor-pointer w-[100px];
+      .copyClipboard {
+        @apply flex items-center justify-end gap-2 cursor-pointer w-[100px];
 
-      p {
-        @apply text-sm;
+        p {
+          @apply text-sm;
+        }
+      }
+    }
+
+    .code-style {
+      @apply w-full h-[calc(100%-30px)] px-8 pb-12 overflow-y-auto;
+
+      /* scrollbar */
+      &::-webkit-scrollbar {
+        width: 0.88vmin;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background: #000;
+      }
+
+      &::-webkit-scrollbar-track {
+        background: #ededed;
       }
     }
   }

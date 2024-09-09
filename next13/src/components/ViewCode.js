@@ -23,7 +23,7 @@ export default function ViewCode(props) {
             <IoCloseOutline fontSize={24} />
           </div>
         </div>
-        <div>
+        <div className="codeTxt_area">
           <div className="copy_area">
             <CopyToClipboard
               className="copyClipboard"
