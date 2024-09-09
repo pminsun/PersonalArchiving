@@ -1,11 +1,20 @@
+import CodeModal from '@/components/CodeModal';
+import { useCodeShowStore } from '@/stores/codeStore';
+import { fullPageScrollHorizontalCode, fullPageScrollHorizontalCssCode } from '@/utils/codeString';
 import { useEffect, useRef, useState } from 'react';
 
 export default function FullpageScrollHorizontal() {
   const outerDivRef = useRef();
+  const { codeShow, setCodeShow, resetCodeShow } = useCodeShowStore();
   const [currentPage, setCurrentPage] = useState(1);
   const [isScrolling, setIsScrolling] = useState(false);
   const [scrollTimeout, setScrollTimeout] = useState(null);
   const totalPage = 4;
+
+  // codeTag reset
+  useEffect(() => {
+    resetCodeShow();
+  }, []);
 
   // currentPage변경시 페이지 이동
   useEffect(() => {
@@ -95,6 +104,12 @@ export default function FullpageScrollHorizontal() {
 
   return (
     <>
+      <CodeModal
+        codeReactTxt={fullPageScrollHorizontalCode}
+        codeCssTxt={fullPageScrollHorizontalCssCode}
+        show={codeShow}
+        setShow={setCodeShow}
+      />
       <section
         ref={outerDivRef}
         className="outer"

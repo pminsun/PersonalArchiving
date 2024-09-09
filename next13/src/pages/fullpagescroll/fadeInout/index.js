@@ -1,14 +1,21 @@
 import CodeModal from '@/components/CodeModal';
+import { useCodeShowStore } from '@/stores/codeStore';
 import { fullPageScrollFadeInOutCode, fullPageScrollFadeInOutCssCode } from '@/utils/codeString';
 import { useEffect, useRef, useState } from 'react';
 
 export default function FullpageScrollFadeInOut() {
   const outerDivRef = useRef();
+  const { codeShow, setCodeShow, resetCodeShow } = useCodeShowStore();
   const [currentPage, setCurrentPage] = useState(1);
   const [isScrolling, setIsScrolling] = useState(false);
   const totalPage = 4;
-  const [codeShow, setCodeShow] = useState({ reat: false, css: false });
 
+  // codeTag reset
+  useEffect(() => {
+    resetCodeShow();
+  }, []);
+
+  // scroll
   useEffect(() => {
     const outerDiv = outerDivRef.current;
     const innerDivs = outerDiv.querySelectorAll('.inner');
