@@ -37,10 +37,14 @@ header {
   @apply flex_center flex-col w-full h-full;
 
   .link_area {
-    @apply mt-[20px];
+    @apply flex_vertical_center gap-2 mt-[20px];
 
     a {
-      @apply block p-3 rounded-md text-white bg-lime-600;
+      @apply block min-w-36 p-3 text-center rounded-md text-white bg-lime-600;
+
+      &:hover {
+        @apply bg-lime-800;
+      }
     }
   }
 }
